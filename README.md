@@ -1,43 +1,56 @@
-[![Build Status](https://travis-ci.org/vergecurrency/VERGE.svg?branch=master)](https://travis-ci.org/vergecurrency/VERGE)
+<p align="center"><img src="https://raw.githubusercontent.com/vergecurrency/VERGE/master/readme-header.png" alt="Verge Source Code"></p>
+<p align="center">
+  <a href="https://circleci.com/gh/vergecurrency/verge/tree/master" target="_blank"><img src="https://circleci.com/gh/vergecurrency/verge/tree/master.svg?style=svg"></a>
+  <img src="https://img.shields.io/badge/status-stable-green.svg">
+  <img src="https://img.shields.io/badge/license-MIT-blue.svg">
+  <a href="https://codecov.io/gh/vergecurrency/VERGE">
+    <img src="https://codecov.io/gh/vergecurrency/VERGE/branch/master/graph/badge.svg" />
+  </a>
+  <a href="https://github.com/vergecurrency/VERGE/releases">
+    <img alt="GitHub All Releases" src="https://img.shields.io/github/downloads/vergecurrency/VERGE/total?style=social">
+  </a>
+  <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/vergecurrency/VERGE">
+</p>
 
-
-```
-____   _________________________   ________ ___________
-\   \ /   /\_   _____/\______   \ /  _____/ \_   _____/
- \   Y   /  |    __)_  |       _//   \  ___  |    __)_
-  \     /   |        \ |    |   \\    \_\  \ |        \ 2018 VERGE/XVG
-   \___/   /_______  / |____|_  / \______  //_______  /
-                   \/         \/         \/         \/
-```
-
-# VERGE [XVG] Source Code
+# VERGE Source Code [XVG]
 
 ## Specifications
+Specification | Value
+--- | ---
+Protocol | PoW (proof of Work)
+Algorithms | scrypt, x17, Lyra2rev2, myr-groestl, & blake2s
+Blocktime | 30 seconds
+Total Supply | 16,500,000,000 XVG
+RPC port | 20102 (testnet: 21102)
+P2P port | 21102 (testnet: 21104)
+pre-mine | N/A
+ICO | N/A
 
-* PoW (proof of work)
-* Algorithms: scrypt, x17, Lyra2rev2, myr-groestl, & blake2s
-* Blocktime: 30 seconds
-* Total Supply: 16.5 Billion XVG
-* No pre-mine
-* No ICO
-* Blockreward:
-  * Block 0 to 14,000 : 200,000 coins
-  * 14,000 to 28,000 : 100,000 coins
-  * 28,000 to 42,000: 50,000 coins
-  * 42,000 to 210,000: 25,000 coins
-  * 210,000 to 378,000: 12,500 coins
-  * 378,000 to 546,000: 6,250 coins
-  * 546,000 to 714,000: 3,125 coins
-  * 714,000 to 2,124,000: 1,560 coins
-  * 2,124,000 to 4,248,000: 730 coins
-* RPC port: `20102`
-* P2P port: `21102`
+## Blockrewards
+Block Number Range | Reward
+--- | ---
+0 to 14,000 | 200,000 coins
+14,001 to 28,000 | 100,000 coins
+28,001 to 42,000 | 50,000 coins
+42,001 to 210,000 | 25,000 coins
+210,001 to 378,000 | 12,500 coins
+378,001 to 546,000 | 6,250 coins
+546,001 to 714,000 | 3,125 coins
+714,001 to 2,124,000 | 1,560 coins
+2,124,001 to 3,700,000 | 730 coins
+3,700,001 to 4,200,000 | 400 coins
+4,200,001 to 4,700,000 | 200 coins
+4,700,001 to 5,200,000 | 100 coins
+5,200,001 to 5,700,000 | 50  coins
+5,700,001 to 6,200,000 | 25  coins
+6,200,001 to 6,700,000 | 12.5 coins
+6,700,001 to 7,200,000 | 6.25 coins
 
 ## Resources
 
 * [Blockchain Explorer](https://verge-blockchain.info/)
-* [Mining Pool List](http://vergecurrency.com/pools/)
-* [Black Paper](https://vergecurrency.com/assets/Verge-Anonymity-Centric-CryptoCurrency.pdf)
+* [Mining Pool List](https://vergecurrency.com/community/xvg-mining-pools/)
+* [Black Paper](https://vergecurrency.com/static/blackpaper/Verge-Anonymity-Centric-CryptoCurrency.pdf)
 
 ### Community
 
@@ -84,25 +97,17 @@ Binary (pre-compiled) wallets are available on all platforms at [https://vergecu
 1. Download the pre-compiled software.
 2. Double click the DMG
 3. Drag the Verge-Qt to your Applications folder
-4. Install required `boost` dependency via homebrew
-
-    ```shell
-    xcode-select --install
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew doctor
-    brew install boost
-    ```
-5. Double click the Verge-Qt application to open it.
-6. Go grab a :coffee: while it syncs with the blockchain
+4. Double click the Verge-Qt application to open it.
+5. Go grab a :coffee: while it syncs with the blockchain
 
 > **Note:** It may look like it is frozen or hung while it is indexing and syncing the blockchain. It's not. It's chugging away, but currently the UI doesn't give you a lot of feedback on status. We're working to fix that. Syncing takes a while to complete (ie. > 10 minutes or more) so just be patient.
 
 > **Note:** If you want to change your configuration the file is located at `~/Library/Application\ Support\VERGE\VERGE.conf`. This isn't required by default.
 
-### Linux Wallet
+### Unix Wallet
 
-1. Download the pre-compiled software.
-2. Unpack it. The wallet GUI is in `./verge/src/qt` and the daemon in `./verge/src`.
+1. Compile using [Unix instructions](doc/build-unix.md).
+2. The wallet GUI is in `./verge/src/qt` and the daemon in `./verge/src`.
 3. **Optional** - the binaries to your favorite location. for use by all users, run the following commands:
 
     ```shell
@@ -144,9 +149,15 @@ You can also check out this [Linux Wallet Video Tutorial](https://www.youtube.co
 
 ## Building From Source
 
-### Linux Wallet on Ubuntu/Debian
+* [Unix Instructions](doc/build-unix.md)
+* [OS X Instructions](doc/build-osx.md)
+* [Windows Instructions](doc/build-windows.md)
 
-Here is a quick short hand way:
+## Developer Notes
+
+The Easy Method:
+
+> **Note**: Sometimes linux user permissions are not set up properly, and causes failed compiling in linux. Please ensure your user has access or do the install from root if these problems arise.
 
 ```shell
 sudo rm -Rf ~/VERGE  #(if you already have it)
@@ -164,17 +175,24 @@ The _slightly_ longer version:
         libdb4.8-dev libdb4.8++-dev build-essential \
         libtool autotools-dev automake pkg-config libssl-dev libevent-dev \
         bsdmainutils git libboost-all-dev libminiupnpc-dev libqt5gui5 \
-        libqt5core5a libqt5webkit5-dev libqt5dbus5 qttools5-dev \
-        qttools5-dev-tools libprotobuf-dev protobuf-compiler libqrencode-dev
+        libqt5core5a libqt5dbus5 libevent-dev qttools5-dev \
+        qttools5-dev-tools libprotobuf-dev protobuf-compiler libqrencode-dev \
+        libseccomp-dev libcap-dev
     ```
 
 2. Clone the git repository and compile the daemon and gui wallet:
 
     ```shell
-    git clone https://github.com/vergecurrency/verge && cd verge && ./autogen.sh && ./configure && make
+    git clone https://github.com/vergecurrency/VERGE && cd VERGE && ./autogen.sh && ./configure && make
+    ```
+    If updating from previous version, dont forget to:
+    ```shell
+    sudo make install
     ```
 
 > **Note**: If you get a "memory exhausted" error, make a swap file. (https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-16-04)
+
+
 
 
 ### Mac OS X Wallet
@@ -219,7 +237,7 @@ The _slightly_ longer version:
 
 ### Windows Wallet
 
-TODO. Take a look as [building/windows](./building/windows).
+TODO. Take a look at [building/windows](./building/windows).
 
 ## Docker Images
 
@@ -243,6 +261,11 @@ algo=lyra
 algo=blake
 ```
 
+## TestNet
+
+Here is a list of active testnet nodes:
+ddvnucmtvyiemiuk.onion (sunerok)
+
 ## Donations
 
 We believe in keeping Verge free and open. Any donations to help fuel the development effort are greatly appreciated! :smile:
@@ -256,3 +279,25 @@ Special thanks to the following people that have helped make Verge possible. :ra
 
 Sunerok, CryptoRekt, MKinney, BearSylla, Hypermist, Pallas1, FuzzBawls, BuZz, glodfinch, InfernoMan, AhmedBodi, BitSpill, MentalCollatz, ekryski and the **entire** #VERGE community!
 
+
+
+
+# Bug Reporting
+
+If you think you've found a bug or a problem with VERGE, please let us know! First, search our issue tracker to see if someone has already reported the problem. If they haven't, open a new issue, and fill out the template with as much information as possible. The more you can tell us about the problem and how it occurred, the more likely we are to fix it.
+
+## _Please do not report security vulnerabilities publicly._
+
+
+## How to report a bug
+
+### Code issues
+
+Since we are a 100% open-source project we strongly prefer if you create a pull-request on Github in the proper repository with the necessary fix.
+
+Alternatively, if you would like to make a suggestion regarding a potential fix please send an email to contact@vergecurrency.com
+
+
+### Security-related issues
+
+Contact the developers privately by sending an e-mail to contact@vergecurrency.com with the details of the issue. Do not post the issue on github or anywhere else until the issue has been resolved.
